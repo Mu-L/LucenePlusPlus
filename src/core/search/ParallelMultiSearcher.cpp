@@ -5,7 +5,12 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "LuceneInc.h"
+#include <boost/version.hpp>
+#if BOOST_VERSION >= 107300  // Boost 1.73.0+
+#include <boost/bind/bind.hpp>
+#else
 #include <boost/bind.hpp>
+#endif
 #include <boost/bind/protect.hpp>
 #include "ParallelMultiSearcher.h"
 #include "_MultiSearcher.h"
